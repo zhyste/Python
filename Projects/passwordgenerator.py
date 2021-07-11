@@ -1,3 +1,6 @@
+#inspired by geeks for geeks article on this
+
+
 import random
 import array
   
@@ -34,14 +37,14 @@ rand_symbol = random.choice(SYMBOLS)
 temp_pass = rand_digit + rand_upper + rand_lower + rand_symbol
   
   
-#fill the rest and randomise
+#fill the rest and randomise until it reaches the maximum length of the password
 for x in range(MAX_LEN - 4):
     temp_pass = temp_pass + random.choice(COMBINED_LIST)
     #the u stands for unicode
     temp_pass_list = array.array('u', temp_pass)
     random.shuffle(temp_pass_list)
   
-#takes the letter in temp password and places it inside the password
+#takes the letters in temp password and places it inside the password
 password = ""
 for x in temp_pass_list:
         password = password + x
